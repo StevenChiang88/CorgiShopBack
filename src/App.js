@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./components/Navbar";
+import { Route, Routes, Navigate } from "react-router-dom";
+import Homepage from "./pages/Homepage";
+import LoginPage from "./pages/LoginPage";
+import OrdersPage from "./pages/OrdersPage";
+import ProductsPage from "./pages/ProductsPage";
+import UsersPage from "./pages/UsersPage";
+import { useSelector } from "react-redux";
+const App = () => {
+  const auth = useSelector((state) => state.auth);
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Navbar>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route
+          path="home"
+          element={auth.isLogged ? <Homepage /> : <Navigate to={"/"} replace />}
+        />
+        <Route
+          path="orders"
+          element={
+            auth.isLogged ? <OrdersPage /> : <Navigate to={"/"} replace />
+          }
+        />
+
+        <Route
+          path="products"
+          element={
+            auth.isLogged ? <ProductsPage /> : <Navigate to={"/"} replace />
+          }
+        />
+
+        <Route
+          path="users"
+          element={
+            auth.isLogged ? <UsersPage /> : <Navigate to={"/"} replace />
+          }
+        />
+      </Routes>
+    </Navbar>
   );
-}
+};
 
 export default App;

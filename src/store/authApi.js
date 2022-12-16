@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
 const authApi = createApi({
   reducerPath: "authApi", //Api的名稱，不能重複
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://nrnrut.deta.dev/",
+    baseUrl: "https://corgishopserver.onrender.com/",
   }),
   endpoints(build) {
     return {

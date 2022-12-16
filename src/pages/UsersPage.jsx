@@ -65,7 +65,7 @@ const UsersPage = () => {
         UsersPage
       </Typography>
       {convertData ? (
-        <div style={{ height: 700, width: "100%" }}>
+        <div style={{ height: "58vh", width: "100%" }}>
           <DataGrid
             rows={convertData}
             columns={columns}

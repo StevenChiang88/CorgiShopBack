@@ -143,7 +143,7 @@ const ProductsPage = () => {
             sx={{
               display: "flex",
               flexDirection: "column",
-              height: { xs: "600px", sm: "800px", md: "500px", lg: "600px" },
+              height: "65vh",
               padding: "2rem",
             }}
           >
@@ -181,7 +181,10 @@ const ProductsPage = () => {
               </GeneralButton>
             </Box>
             <DataGrid
-              style={{ backgroundColor: "white", marginTop: "2rem" }}
+              style={{
+                backgroundColor: "white",
+                marginTop: "2rem",
+              }}
               rows={filteredData}
               columns={columns}
               pageSize={5}

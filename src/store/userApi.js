@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/dist/query/react";
 const userApi = createApi({
   reducerPath: "userApi", //Api的名稱，不能重複
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://nrnrut.deta.dev/",
+    baseUrl: "https://corgishopserver.onrender.com/",
     prepareHeaders: (headers, { getState }) => {
       //先獲得用戶token (用LocalStorage的Token不好，怕會過期)，
       //應該要用redux內的token，但是這邊調用不了useSelector

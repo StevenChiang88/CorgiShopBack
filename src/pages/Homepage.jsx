@@ -33,6 +33,7 @@ const Homepage = () => {
     });
     revenue.revenueOfLastYear.forEach((item) => {
       Y += item.total;
+
     });
 
     let M = revenue.revenueOfThisYear.find((item) => {
@@ -44,11 +45,15 @@ const Homepage = () => {
       LM = revenue.revenueOfLastYear.find((item) => {
         return item._id === 12;
       });
+
     } else {
       LM = revenue.revenueOfThisYear.find((item) => {
-        return item._id === m;
+        return item._id === m+1;
       });
+      
     }
+
+
     setDataForCard({
       ThisYear: { profit: X, percent: ((X - Y) / Y).toFixed(3) },
       LastYear: Y,
